@@ -1,0 +1,297 @@
+/* Graph Components */
+.graph-container {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px var(--shadow);
+    margin: 2rem 0;
+}
+
+.graph-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.graph-title {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.graph-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.graph-action-btn {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.graph-action-btn:hover {
+    background-color: rgba(187, 134, 252, 0.1);
+    border-color: var(--primary);
+}
+
+.graph-canvas {
+    width: 100%;
+    height: 400px;
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Graph Controls */
+.graph-controls {
+    background-color: var(--bg-surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.control-group {
+    margin-bottom: 1.5rem;
+}
+
+.control-group:last-child {
+    margin-bottom: 0;
+}
+
+.control-label {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.control-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.control-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.75rem;
+    background-color: var(--bg-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: 'Fira Code', monospace;
+}
+
+.control-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.control-select {
+    padding: 0.75rem;
+    background-color: var(--bg-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.control-select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Graph Legend */
+.graph-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--bg-surface);
+    border-radius: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.legend-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Graph Tooltip */
+.graph-tooltip {
+    position: absolute;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 4px 12px var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.tooltip-coords {
+    font-family: 'Fira Code', monospace;
+    color: var(--primary);
+}
+
+/* Interactive Graph Elements */
+.graph-point {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.graph-point:hover {
+    transform: scale(1.2);
+}
+
+.graph-axis {
+    stroke: var(--text-secondary);
+    stroke-width: 1.5;
+}
+
+.graph-grid {
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 1;
+}
+
+.graph-label {
+    fill: var(--text-secondary);
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Animation for Graphs */
+@keyframes drawLine {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.animated-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLine 2s ease-in-out forwards;
+}
+
+/* Special Graph Types */
+.polar-graph {
+    background: radial-gradient(circle, var(--bg-surface) 0%, var(--bg-card) 100%);
+}
+
+.unit-circle {
+    position: relative;
+    background: conic-gradient(from 0deg, var(--primary) 0%, var(--accent) 100%);
+    border-radius: 50%;
+}
+
+.vector-graph .vector {
+    stroke: var(--primary);
+    stroke-width: 2;
+    marker-end: url(#arrowhead);
+}
+
+/* Graph Export Options */
+.export-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.export-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.export-btn:hover {
+    background-color: rgba(187, 134, 252, 0.1);
+    border-color: var(--primary);
+}
+
+/* Responsive Graph Styles */
+@media (max-width: 768px) {
+    .graph-container {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .graph-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .graph-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .graph-canvas {
+        height: 300px;
+    }
+
+    .control-row {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .control-input {
+        min-width: 100%;
+    }
+
+    .export-options {
+        flex-direction: column;
+    }
+
+    .export-btn {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .graph-canvas {
+        height: 250px;
+    }
+
+    .graph-legend {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

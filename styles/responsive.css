@@ -1,0 +1,446 @@
+/* Responsive Design Utilities */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .graph-container {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-container {
+        grid-template-columns: 1fr;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    /* Header and Navigation */
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+        display: none;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-link {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link.active::after {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-visual {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        transform: none;
+        margin-top: 2rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    /* Tools and Features */
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .updates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Cards */
+    .tool-card {
+        padding: 1.5rem;
+    }
+
+    .tool-actions {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .tool-badge {
+        align-self: flex-start;
+    }
+
+    /* Graph Controls */
+    .graph-controls-panel {
+        padding: 1rem;
+    }
+
+    .template-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .graph-actions {
+        flex-direction: column;
+    }
+
+    /* Converter */
+    .converter-tabs {
+        flex-direction: column;
+    }
+
+    .converter-tab {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .converter-tab.active::after {
+        display: none;
+    }
+
+    .upload-area {
+        padding: 2rem 1rem;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 540px;
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .template-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .property-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .range-inputs {
+        justify-content: space-between;
+    }
+
+    .range-input {
+        width: 45%;
+    }
+
+    /* Calculator and Input Adjustments */
+    .calculator-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .function-input {
+        font-size: 0.9rem;
+    }
+
+    /* Mobile Optimized Typography */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    /* Touch-friendly Sizes */
+    .control-btn,
+    .action-btn,
+    .tool-button {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-link {
+        padding: 1rem 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Mobile-specific spacing */
+    .section-padding {
+        padding: 2rem 0;
+    }
+
+    .mobile-mt-1 { margin-top: 1rem; }
+    .mobile-mt-2 { margin-top: 2rem; }
+    .mobile-mb-1 { margin-bottom: 1rem; }
+    .mobile-mb-2 { margin-bottom: 2rem; }
+}
+
+@media (max-width: 375px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .tool-card {
+        padding: 1rem;
+    }
+
+    .graph-container {
+        padding: 0.75rem;
+    }
+
+    .calculator-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .template-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-header,
+    .sidebar,
+    .graph-controls-overlay,
+    .graph-actions,
+    .converter-tabs,
+    .upload-area,
+    .preview-actions,
+    .main-footer {
+        display: none !important;
+    }
+
+    .graph-canvas-container,
+    .preview-canvas {
+        border: 2px solid #000;
+        box-shadow: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .graph-section,
+    .converter-section {
+        padding: 0;
+        margin: 0;
+        break-inside: avoid;
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo-icon,
+    .tool-icon,
+    .feature-icon {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .graph-canvas,
+    .preview-canvas {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .tool-card:hover,
+    .feature-card:hover,
+    .update-card:hover {
+        transform: none;
+    }
+
+    .cta-button:hover {
+        transform: none;
+    }
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+    /* Base styles already support dark mode */
+}
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --bg-card: #ffffff;
+        --bg-surface: #e9ecef;
+        --text-primary: #212529;
+        --text-secondary: #6c757d;
+        --text-disabled: #adb5bd;
+        --shadow: rgba(0, 0, 0, 0.1);
+        --shadow-light: rgba(0, 0, 0, 0.05);
+    }
+
+    .graph-canvas,
+    .preview-canvas {
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--text-disabled);
+    }
+
+    .function-input,
+    .control-input,
+    .range-input {
+        background-color: var(--bg-secondary);
+        border-color: var(--text-disabled);
+        color: var(--text-primary);
+    }
+}
+
+/* Orientation specific */
+@media (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        padding: 2rem 0;
+        min-height: auto;
+    }
+
+    .hero-visual {
+        height: 200px;
+    }
+
+    .graph-canvas {
+        height: 300px;
+    }
+}
+
+/* Very large screens */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1500px;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
