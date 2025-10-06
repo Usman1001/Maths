@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Calculator - MathsMaster LK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/dark-theme.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link rel="stylesheet" href="../styles/components/navigation.css">
+    <link rel="stylesheet" href="../styles/components/cards.css">
+    <link rel="stylesheet" href="../styles/components/graphs.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">M</div>
+                    <div class="logo-text">Maths<span>Master</span> LK</div>
+                </div>
+                
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-links">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="trigonometry.html" class="nav-link">Trigonometry</a></li>
+                        <li><a href="calculus.html" class="nav-link">Calculus</a></li>
+                        <li><a href="algebra.html" class="nav-link">Algebra</a></li>
+                        <li><a href="statistics.html" class="nav-link active">Statistics</a></li>
+                        <li><a href="mechanics.html" class="nav-link">Mechanics</a></li>
+                        <li><a href="pure-maths.html" class="nav-link">Pure Maths</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-bar" id="searchBar">
+                <input type="text" placeholder="Search statistics concepts..." class="search-input">
+                <button class="search-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html" class="breadcrumb-item">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">Statistics</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="page-hero">
+                <h1>Statistics Calculator</h1>
+                <p>Comprehensive statistical tools for descriptive statistics, probability distributions, regression analysis, and hypothesis testing.</p>
+            </section>
+
+            <!-- Quick Tools Grid -->
+            <section class="tools-quick-access">
+                <h2>Quick Tools</h2>
+                <div class="cards-grid-mini">
+                    <div class="tool-card-mini" onclick="scrollToSection('descriptive-stats')">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Descriptive Statistics</h4>
+                        <p>Mean, median, mode, standard deviation</p>
+                    </div>
+                    
+                    <div class="tool-card-mini" onclick="scrollToSection('probability-calculator')">
+                        <div class="tool-icon">
+                            <i class="fas fa-dice"></i>
+                        </div>
+                        <h4>Probability Calculator</h4>
+                        <p>Probability distributions & calculations</p>
+                    </div>
+                    
+                    <div class="tool-card-mini" onclick="scrollToSection('regression-analysis')">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Regression Analysis</h4>
+                        <p>Linear & polynomial regression</p>
+                    </div>
+                    
+                    <div class="tool-card-mini" onclick="scrollToSection('hypothesis-testing')">
+                        <div class="tool-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h4>Hypothesis Testing</h4>
+                        <p>t-tests, z-tests, chi-square tests</p>
+                    </div>
+                    
+                    <div class="tool-card-mini" onclick="scrollToSection('data-visualization')">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4>Data Visualization</h4>
+                        <p>Charts, graphs, and plots</p>
+                    </div>
+                    
+                    <div class="tool-card-mini" onclick="scrollToSection('confidence-intervals')">
+                        <div class="tool-icon">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <h4>Confidence Intervals</h4>
+                        <p>Calculate confidence intervals</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Descriptive Statistics Section -->
+            <section class="tool-section" id="descriptive-stats">
+                <div class="section-header">
+                    <h2>Descriptive Statistics</h2>
+                    <p>Calculate measures of central tendency and dispersion for your data set.</p>
+                </div>
+                
+                <div class="tool-interface">
+                    <div class="interface-grid">
+                        <div class="input-panel">
+                            <div class="card">
+                                <h4>Data Input</h4>
+                                <div class="input-group">
+                                    <label for="dataInput">Enter data (comma separated):</label>
+                                    <textarea id="dataInput" class="control-input" rows="5" placeholder="12, 15, 18, 22, 25, 28, 30">12, 15, 18, 22, 25, 28, 30</textarea>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="dataType">Data Type:</label>
+                                    <select id="dataType" class="control-select">
+                                        <option value="sample">Sample Data</option>
+                                        <option value="population">Population Data</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button class="action-btn primary" onclick="calculateDescriptiveStats()">Calculate Statistics</button>
+                                    <button class="action-btn secondary" onclick="clearData()">Clear Data</button>
+                                    <button class="action-btn secondary" onclick="generateSampleData()">Sample Data</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="output-panel">
+                            <div class="card">
+                                <h4>Statistical Results</h4>
+                                <div id="statsResult" class="result-content">
+                                    <p>Enter data to see statistical analysis.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <h4>Data Summary</h4>
+                                <div id="dataSummary" class="summary-content">
+                                    <!-- Data summary will appear here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualization-panel">
+                        <div class="card">
+                            <h4>Data Visualization</h4>
+                            <div class="graph-container">
+                                <canvas id="statsChart" width="600" height="300"></canvas>
+                            </div>
+                            <div class="chart-controls">
+                                <select id="chartType" class="control-select" onchange="updateChart()">
+                                    <option value="histogram">Histogram</option>
+                                    <option value="boxplot">Box Plot</option>
+                                    <option value="scatter">Scatter Plot</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Educational Content -->
+            <section class="educational-section">
+                <div class="section-header">
+                    <h2>Statistics Concepts</h2>
+                    <p>Fundamental statistical concepts and formulas.</p>
+                </div>
+                
+                <div class="concepts-grid">
+                    <div class="concept-card">
+                        <h4>Measures of Center</h4>
+                        <ul class="concept-list">
+                            <li>Mean: μ = Σx/n</li>
+                            <li>Median: Middle value</li>
+                            <li>Mode: Most frequent value</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h4>Measures of Spread</h4>
+                        <ul class="concept-list">
+                            <li>Variance: σ² = Σ(x-μ)²/n</li>
+                            <li>Standard Deviation: σ = √σ²</li>
+                            <li>Range: Max - Min</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h4>Probability Distributions</h4>
+                        <ul class="concept-list">
+                            <li>Normal Distribution</li>
+                            <li>Binomial Distribution</li>
+                            <li>Poisson Distribution</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h4>Regression</h4>
+                        <p>Linear regression equation:</p>
+                        <div class="concept-formula">
+                            y = a + bx<br>
+                            where b = Σ(x-x̄)(y-ȳ)/Σ(x-x̄)²
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon small">M</div>
+                        <div class="logo-text">Maths<span>Master</span> LK</div>
+                    </div>
+                    <p class="footer-description">Advanced statistical tools for A/L Mathematics students.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#descriptive-stats">Descriptive Stats</a></li>
+                        <li><a href="#probability-calculator">Probability</a></li>
+                        <li><a href="#regression-analysis">Regression</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-heading">Related Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="algebra.html">Algebra</a></li>
+                        <li><a href="calculus.html">Calculus</a></li>
+                        <li><a href="../index.html#graph-plotter">Graph Plotter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 MathsMaster LK. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="../scripts/navigation.js"></script>
+    <script src="../scripts/ui-handler.js"></script>
+    
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Initialize page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update breadcrumb
+            if (window.navigationManager) {
+                window.navigationManager.updateBreadcrumb('statistics');
+            }
+        });
+
+        // Statistics Calculations
+        function calculateDescriptiveStats() {
+            const dataInput = document.getElementById('dataInput').value;
+            const dataType = document.getElementById('dataType').value;
+            
+            if (!dataInput.trim()) {
+                window.uiHandler?.showToast('Please enter some data', 'error');
+                return;
+            }
+            
+            try {
+                // Parse input data
+                const data = dataInput.split(',')
+                    .map(x => parseFloat(x.trim()))
+                    .filter(x => !isNaN(x));
+                
+                if (data.length === 0) {
+                    throw new Error('No valid numbers found in input');
+                }
+                
+                // Calculate statistics
+                const stats = calculateStats(data, dataType);
+                displayStatsResults(stats, data);
+                updateDataChart(data);
+                
+                window.uiHandler?.showToast('Statistics calculated successfully!', 'success');
+                
+            } catch (error) {
+                window.uiHandler?.showToast('Error calculating statistics: ' + error.message, 'error');
+            }
+        }
+
+        function calculateStats(data, dataType) {
+            const sortedData = [...data].sort((a, b) => a - b);
+            const n = data.length;
+            
+            // Mean
+            const mean = data.reduce((sum, x) => sum + x, 0) / n;
+            
+            // Median
+            const mid = Math.floor(n / 2);
+            const median = n % 2 === 0 ? 
+                (sortedData[mid - 1] + sortedData[mid]) / 2 : 
+                sortedData[mid];
+            
+            // Mode
+            const frequency = {};
+            data.forEach(x => frequency[x] = (frequency[x] || 0) + 1);
+            const maxFreq = Math.max(...Object.values(frequency));
+            const mode = Object.keys(frequency)
+                .filter(x => frequency[x] === maxFreq)
+                .map(Number);
+            
+            // Range
+            const range = sortedData[n - 1] - sortedData[0];
+            
+            // Variance and Standard Deviation
+            const variance = data.reduce((sum, x) => sum + Math.pow(x - mean, 2), 0) / 
+                           (dataType === 'population' ? n : n - 1);
+            const stdDev = Math.sqrt(variance);
+            
+            // Quartiles
+            const q1 = calculateQuartile(sortedData, 0.25);
+            const q3 = calculateQuartile(sortedData, 0.75);
+            const iqr = q3 - q1;
+            
+            return {
+                count: n,
+                mean: mean,
+                median: median,
+                mode: mode,
+                range: range,
+                variance: variance,
+                stdDev: stdDev,
+                q1: q1,
+                q3: q3,
+                iqr: iqr,
+                min: sortedData[0],
+                max: sortedData[n - 1]
+            };
+        }
+
+        function calculateQuartile(sortedData, percentile) {
+            const n = sortedData.length;
+            const pos = (n - 1) * percentile;
+            const base = Math.floor(pos);
+            const rest = pos - base;
+            
+            if (sortedData[base + 1] !== undefined) {
+                return sortedData[base] + rest * (sortedData[base + 1] - sortedData[base]);
+            } else {
+                return sortedData[base];
+            }
+        }
+
+        function displayStatsResults(stats, data) {
+            const resultElement = document.getElementById('statsResult');
+            const summaryElement = document.getElementById('dataSummary');
+            
+            if (resultElement) {
+                resultElement.innerHTML = `
+                    <div class="stats-results">
+                        <h4>Descriptive Statistics</h4>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <label>Count (n):</label>
+                                <span>${stats.count}</span>
+                            </div>
+                            <div class="stat-item">
+                                <label>Mean (μ):</label>
+                                <span>${stats.mean.toFixed(4)}</span>
+                            </div>
+                            <div class="stat-item">
+                                <label>Median:</label>
+                                <span>${stats.median.toFixed(4)}</span>
+                            </div>
+                            <div class="stat-item">
+                                <label>Mode:</label>
+                                <span>${stats.mode.join(', ')}</span>
+                            </div>
+                            <div class="stat-item">
+                                <label>Std Deviation (σ):</label>
+                                <span>${stats.stdDev.toFixed(4)}</span>
+                            </div>
+                            <div class="stat-item">
+                                <label>Variance (σ²):</label>
+                                <span>${stats.variance.toFixed(4)}</span>
+                            </div>
+                            <div class="stat-item">
+                                <label>Range:</label>
+                                <span>${stats.range.toFixed(4)}</span>
+                            </div>
+                            <div class="stat-item">
+                                <label>IQR:</label>
+                                <span>${stats.iqr.toFixed(4)}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            if (summaryElement) {
+                summaryElement.innerHTML = `
+                    <div class="data-summary">
+                        <h5>Data Summary</h5>
+                        <div class="summary-item">
+                            <label>Minimum:</label>
+                            <span>${stats.min}</span>
+                        </div>
+                        <div class="summary-item">
+                            <label>Q1 (25th percentile):</label>
+                            <span>${stats.q1.toFixed(4)}</span>
+                        </div>
+                        <div class="summary-item">
+                            <label>Median (Q2):</label>
+                            <span>${stats.median.toFixed(4)}</span>
+                        </div>
+                        <div class="summary-item">
+                            <label>Q3 (75th percentile):</label>
+                            <span>${stats.q3.toFixed(4)}</span>
+                        </div>
+                        <div class="summary-item">
+                            <label>Maximum:</label>
+                            <span>${stats.max}</span>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function updateDataChart(data) {
+            const canvas = document.getElementById('statsChart');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const chartType = document.getElementById('chartType').value;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Simple chart drawing (in a real implementation, use a charting library)
+            ctx.fillStyle = '#bb86fc';
+            ctx.font = '14px Inter';
+            ctx.textAlign = 'center';
+            ctx.fillText('Chart visualization would appear here', canvas.width / 2, canvas.height / 2);
+            ctx.fillText('Using: ' + chartType, canvas.width / 2, canvas.height / 2 + 20);
+        }
+
+        function updateChart() {
+            const dataInput = document.getElementById('dataInput').value;
+            if (dataInput.trim()) {
+                const data = dataInput.split(',')
+                    .map(x => parseFloat(x.trim()))
+                    .filter(x => !isNaN(x));
+                updateDataChart(data);
+            }
+        }
+
+        function clearData() {
+            document.getElementById('dataInput').value = '';
+            document.getElementById('statsResult').innerHTML = '<p>Enter data to see statistical analysis.</p>';
+            document.getElementById('dataSummary').innerHTML = '';
+            
+            const canvas = document.getElementById('statsChart');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        function generateSampleData() {
+            const sampleData = [];
+            for (let i = 0; i < 20; i++) {
+                sampleData.push(Math.floor(Math.random() * 100) + 1);
+            }
+            document.getElementById('dataInput').value = sampleData.join(', ');
+        }
+    </script>
+
+    <style>
+        .stats-results .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            background: var(--bg-surface);
+            border-radius: 6px;
+        }
+        
+        .stat-item label {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .stat-item span {
+            font-family: 'Fira Code', monospace;
+            color: var(--primary);
+        }
+        
+        .data-summary .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid var(--text-disabled);
+        }
+        
+        textarea.control-input {
+            resize: vertical;
+            min-height: 100px;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .chart-controls {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</body>
+</html>
